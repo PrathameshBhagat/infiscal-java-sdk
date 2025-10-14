@@ -1,6 +1,6 @@
 package com.infisical.sdk.auth;
 
-import java.io.IOException;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -41,10 +41,11 @@ public class GCPAuthProvider {
 
             return body;
 
-        } catch (IOException e){
-            throw new RuntimeException("Failed to fetch Google credentials", e);
         } catch (Exception e){
-            throw new RuntimeException("Error during GCP Authentication", e);
+            if (e.getCause() instanceof UnknownHostException) {
+                throw new InfisicalException("No network connection."); 
+            }
+            throw new InfisicalException("Failed to fetch Google credentials: " + e.getMessage());
         }
 
     }

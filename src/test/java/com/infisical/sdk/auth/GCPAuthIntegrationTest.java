@@ -13,7 +13,7 @@ public class GCPAuthIntegrationTest {
 
     private static final Logger logger = LoggerFactory.getLogger(GCPAuthIntegrationTest.class);
     @Test
-    public void testGCPAuthAndFetchSecrets() throws Exception {
+    public void testGCPAuthAndFetchSecrets() {
 
         try {
 
