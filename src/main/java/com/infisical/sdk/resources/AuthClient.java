@@ -61,7 +61,7 @@ public class AuthClient {
 
     if (identityId == null || identityId.isEmpty())
 
-      throw new InfisicalException("Identity ID is required");
+      throw new InfisicalException("Infisical Identity ID is required");
 
     var url = String.format("%s%s", this.apiClient.GetBaseUrl(), "/api/v1/auth/gcp-auth/login");
 

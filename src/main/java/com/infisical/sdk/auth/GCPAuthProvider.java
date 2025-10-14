@@ -16,7 +16,7 @@ public class GCPAuthProvider {
 
         if ( identityId == null || identityId.isEmpty() )
 
-            throw new InfisicalException( "Identity ID is required");
+            throw new InfisicalException( "Infisical Identity ID is required");
 
         try{
 
@@ -42,7 +42,7 @@ public class GCPAuthProvider {
             return body;
 
         } catch (IOException e){
-throw new RuntimeException("Failed to fetch Google credentials", e);
+            throw new RuntimeException("Failed to fetch Google credentials", e);
         } catch (Exception e){
             throw new RuntimeException("Error during GCP Authentication", e);
         }
